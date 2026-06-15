@@ -1,20 +1,29 @@
-# milkyway
+# thefunwebsite
 
-![milkyway](https://github.com/hackclub/milkyway/blob/main/static/ogimg.png?raw=true)
+The Fun Website — a cute, playful site for puzzles, games, and quizzes.
 
-milkyway is a hack club program where you can make games, get coins in return, build your house, and earn rewards (like a ticket to overglade, a hyper-immersive game jam)!!
+By: Rushil, Anaya, Everett, Oliver, Abagail, Bayla
 
-this site is built in sveltekit.
+Built with [SvelteKit](https://svelte.dev/docs/kit).
 
-# contributing
+## Developing
 
-if you have any cool ideas to make it better, please feel free to submit a pull request and/or reach out to @tongyu on hack club slack!
-
-clone the repo, then install dependencies with `npm install` (or `pnpm install` or `yarn`). start a development server:
+Install dependencies, then start a development server:
 
 ```sh
+npm install
 npm run dev
 
 # or start the server and open the app in a new browser tab
 npm run dev -- --open
 ```
+
+## Building
+
+To create a production version of the app:
+
+```sh
+npm run build
+```
+
+Preview the production build with `npm run preview`.

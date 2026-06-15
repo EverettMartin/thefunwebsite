@@ -6,10 +6,7 @@ const config = {
 		adapter: adapter({
 			// This ensures we get the real client IP from proxy headers
 			// If you're behind Cloudflare, Nginx, or any reverse proxy
-		}),
-		csrf: {
-			checkOrigin: false
-		}
+		})
 	}
 };
 

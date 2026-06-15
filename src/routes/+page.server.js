@@ -1,5 +1,3 @@
-import { sanitizeUserForFrontend } from '$lib/server/auth.js';
-
-export async function load({ locals }) {
-  return { user: sanitizeUserForFrontend(locals.user) };
+export async function load() {
+  return {};
 }
