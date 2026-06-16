@@ -3,6 +3,8 @@
 
 	let email = $state('');
 	let expandedFaqItem = $state(/** @type {number | null} */ (null));
+	let showCatInfo = $state(false);
+	let showStickynoteInfo = $state(false);
 
 	// FAQ data — replace with your own questions and answers
 	const faqData = [
@@ -52,7 +54,9 @@
 </svelte:head>
 
 <main>
-	<img class="logo-bg" src="logo.png" alt="The Fun Website logo" />
+	<img class="corner-logo" src="logo.png" alt="The Fun Website logo" />
+
+	<img class="logo-bg" src="hero.png" alt="The Fun Website" />
 
 	<div class="login-inputs">
 		<p style="color: white;">Welcome to The Fun Website — placeholder tagline goes here.</p>
@@ -60,14 +64,38 @@
 	</div>
 
 	<div class="sample-room">
-		<img src="landing/sample-room.png" class="room-bg" alt="" />
+		<img src="landing/sample room.png" class="room-bg" alt="" />
 
-		<img src="landing/feature-1.png" class="room-makegames" alt="" />
-		<p class="room-text room-makegames">feature one</p>
-		<img src="landing/feature-2.png" class="room-buildhouses" alt="" />
-		<p class="room-text room-buildhouses">feature two</p>
-		<img src="landing/feature-3.png" class="room-getprizes" alt="" />
-		<p class="room-text room-getprizes">feature three</p>
+		<img
+			src="landing/stickynote.png"
+			class="room-stickynote"
+			alt=""
+			onmouseenter={() => (showStickynoteInfo = true)}
+			onmouseleave={() => (showStickynoteInfo = false)}
+		/>
+
+		<div class="room-stickynote-info" class:visible={showStickynoteInfo}>
+			<p style="color: white;">placeholder note text</p>
+			<p style="color: white;">~ anonymous</p>
+		</div>
+
+		<img
+			src="landing/cat.png"
+			class="room-cat"
+			alt=""
+			onmouseenter={() => (showCatInfo = true)}
+			onmouseleave={() => (showCatInfo = false)}
+		/>
+
+		<div class="room-cat-info" class:visible={showCatInfo}>
+			<p style="color: white;">placeholder title</p>
+			<p style="color: white;">placeholder description</p>
+			<p style="color: white;">placeholder detail</p>
+		</div>
+
+		<img src="landing/makegames.png" class="room-makegames" alt="games" />
+		<img src="landing/buildhouses.png" class="room-buildhouses" alt="puzzles" />
+		<img src="landing/getprizes.png" class="room-getprizes" alt="quizzes" />
 	</div>
 
 	<div class="prizes-row">
@@ -116,6 +144,7 @@
 	}
 
 	main {
+		position: relative;
 		width: 100%;
 		background-color: #74ade1;
 		min-height: 100%;
@@ -126,6 +155,15 @@
 	.logo-bg {
 		width: 100%;
 		margin-bottom: -45%;
+	}
+
+	.corner-logo {
+		position: absolute;
+		top: 16px;
+		left: 16px;
+		width: min(90px, 18vw);
+		height: auto;
+		z-index: 10;
 	}
 
 	.login-inputs {
@@ -153,6 +191,60 @@
 	.sample-room .room-bg {
 		width: 50vw;
 		top: 0;
+	}
+
+	.sample-room .room-cat {
+		width: 5vw;
+		top: 70%;
+		left: 52%;
+	}
+
+	.sample-room .room-stickynote {
+		width: 5vw;
+		top: 35%;
+		left: 40%;
+	}
+
+	.room-cat,
+	.room-stickynote {
+		transition: filter 0.2s;
+	}
+
+	.room-cat-info {
+		position: absolute;
+		display: none;
+
+		background-color: white;
+
+		top: 60%;
+		left: 50%;
+	}
+
+	.room-cat-info p {
+		margin: 0;
+		font-size: 0.8em;
+	}
+
+	.room-cat-info.visible {
+		display: block;
+	}
+
+	.room-stickynote-info {
+		position: absolute;
+		display: none;
+
+		background-color: white;
+		top: 29%;
+		left: 38%;
+	}
+
+	.room-stickynote-info p {
+		margin: 0;
+		font-size: 0.8em;
+	}
+
+	.room-stickynote-info.visible {
+		display: block;
 	}
 
 	.room-circle-info.makegames {
