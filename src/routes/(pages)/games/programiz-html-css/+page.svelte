@@ -10,17 +10,19 @@
 <section class="panel">
 	<h1>Zombie Pixel Runner</h1>
 	<p>
-		Play this pixel-style runner directly here. If you want the full-screen version, you can also
-		open the original page.
+		This game lives on another site, and some browsers block direct embedding. Use the button below to
+		open it in a fresh tab and jump right in.
 	</p>
 
-	<div class="game-shell">
-		<iframe
-			src="https://everettmartin.github.io/My-Website/programiz-html-css/index.html"
-			title="Zombie Pixel Runner"
-			loading="lazy"
-			referrerpolicy="strict-origin-when-cross-origin"
-		></iframe>
+	<div class="actions primary-actions">
+		<a
+			href="https://everettmartin.github.io/My-Website/programiz-html-css/index.html"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="launch-button"
+		>
+			▶ Play Zombie Pixel Runner
+		</a>
 	</div>
 
 	<div class="actions">
@@ -54,24 +56,30 @@
 		line-height: 1.5;
 	}
 
-	.game-shell {
-		width: 100%;
-		margin: 0 auto 28px;
-		border-radius: 18px;
-		overflow: hidden;
-		box-shadow: 0 10px 30px rgba(20, 50, 100, 0.25);
-		background: #0f1117;
-	}
-
-	iframe {
-		display: block;
-		width: 100%;
-		height: min(80vh, 760px);
-		border: 0;
-	}
-
 	.actions {
 		display: flex;
 		justify-content: center;
+	}
+
+	.primary-actions {
+		margin-bottom: 16px;
+	}
+
+	.launch-button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 12px 18px;
+		border: 4px solid var(--orange);
+		border-radius: 999px;
+		background: var(--yellow);
+		color: #111;
+		font-weight: 800;
+		text-decoration: none;
+		transition: background 0.2s ease;
+	}
+
+	.launch-button:hover {
+		background: var(--orange);
 	}
 </style>
